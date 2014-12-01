@@ -3,6 +3,7 @@ class Tags {
 	
 	public $url;
 	public $type;
+	public $menu;
 
 	public function js_css($type,$url) {		
 
@@ -98,7 +99,14 @@ class Html extends Tags {
 
 	}
 
-	public function nav (){
+	public function nav ($menu){
+		$this->menu=$menu;
+		if($menu==""){
+			$menu="index.php";
+		}else {
+			$menu="";
+		}
+
 		echo '<!-- Navigation -->';
     	echo '<nav class="navbar navbar-custom navbar-fixed-top" role="navigation">';
         	echo '<div class="container">';
@@ -106,7 +114,7 @@ class Html extends Tags {
 	                echo '<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">';
 	                    echo '<i class="fa fa-bars"></i>';
 	                echo '</button>';
-                echo '<a class="navbar-brand page-scroll" href="#page-top">';
+                echo '<a class="navbar-brand page-scroll" href="'. $menu .'#page-top">';
                     echo '<i class="glyphicon glyphicon-globe"></i>  <span class="light"></span> Tecnotropolis';
                 echo '</a>';
             echo '</div>';
@@ -116,19 +124,19 @@ class Html extends Tags {
                 echo '<ul class="nav navbar-nav">';
                     	echo '<!-- Hidden li included to remove active class from about link when scrolled up past about section -->';
                     echo '<li class="hidden">';
-                        echo '<a href="#page-top"></a>';
+                        echo '<a href="'. $menu .'#page-top"></a>';
                     echo '</li>';
                     
                     echo '<li>';
-                        echo '<a class="page-scroll" href="#"><i class="glyphicon glyphicon-home"></i></a>';
+                        echo '<a class="page-scroll" href="'. $menu .'#"><i class="glyphicon glyphicon-home"></i></a>';
                     echo '</li>';
             		
             		echo '<li>';
-                        echo '<a class="page-scroll" href="#about">Nosotros</a>';
+                        echo '<a class="page-scroll" href="'. $menu .'#about">Nosotros</a>';
                     echo '</li>';
                     
                     echo '<li>';
-                        echo '<a class="page-scroll" href="#ubicacion">Ubicación</a>';
+                        echo '<a class="page-scroll" href="'. $menu .'#ubicacion">Ubicación</a>';
                     echo '</li>';
             		
             		echo '<li>';
@@ -136,11 +144,11 @@ class Html extends Tags {
                     echo '</li>';
             		
             		echo '<li>';
-                        echo '<a class="page-scroll" href="#servicios">Servicios</a>';
+                        echo '<a class="page-scroll" href="'. $menu .'#servicios">Servicios</a>';
                     echo '</li>';
                     
                     echo '<li>';
-                        echo '<a class="page-scroll" href="#contact">Contacto</a>';
+                        echo '<a class="page-scroll" href="'. $menu .'#contact">Contacto</a>';
                     echo '</li>';
                 echo '</ul>';
             echo '</div>';
