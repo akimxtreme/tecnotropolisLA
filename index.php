@@ -2,14 +2,8 @@
 require_once("tags.php");
 $html = new Html();
 $html->html_i();
-
-
-?>
-<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
-<?php
 $html->nav('0'); 
 ?>
-
 
     <!-- Intro Header -->
     <header class="intro">

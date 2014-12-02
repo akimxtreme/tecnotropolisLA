@@ -1,6 +1,6 @@
 ﻿<?php
 session_start();
-error_reporting (5); 
+//error_reporting (5); 
 if (!empty($_SESSION['nombre'])) {
     ?>
     <!DOCTYPE html>

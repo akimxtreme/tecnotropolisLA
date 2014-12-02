@@ -47,6 +47,8 @@ class Html extends Tags {
 	    		$this->js_css('css','css/grayscale.css');
 	    		echo '<!-- Custom Fonts -->';
 	    		$this->js_css('css','font-awesome-4.1.0/css/font-awesome.min.css');
+	    		echo '<!-- Personal Styles -->';
+	    		$this->js_css('css','css/stylesheet.css');
 	    		echo '<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->';
 	    		echo "<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->";
 	    		echo '
@@ -55,7 +57,8 @@ class Html extends Tags {
 	        	<script src="js/respond.min.js"></script>
 	    		<![endif]-->
 	    		';
-    		echo '</head>';   		
+    		echo '</head>'; 
+    		echo '<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">';
 	}
 
 	public function html_f (){
@@ -156,6 +159,20 @@ class Html extends Tags {
         echo '</div>';
         echo '<!-- /.container -->';
     echo '</nav>';
+	}
+
+	public function introHeader (){
+		echo '<!-- Intro Header -->';
+    		echo '<header class="intro" style="height: 90px;">';
+        		//echo '<div class="intro-body">';
+		            //echo '<div class="container">';
+		                //echo '<div class="row">';
+		                    //echo '<div class="col-lg-12">';
+		                    //echo '</div>';
+		                //echo '</div>';
+		            //echo '</div>';
+        		//echo '</div>';
+    		echo '</header>';
 	}
 }
 

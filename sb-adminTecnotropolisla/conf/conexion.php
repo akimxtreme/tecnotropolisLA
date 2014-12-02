@@ -1,6 +1,6 @@
 <?php
 session_start();
-$con = mysql_connect("localhost", "root", "") or header("Location: index.php?warning=true");//die("Problemas a conectar al host");
+$con = mysql_connect("127.0.0.1", "dilarreta", "1234567890") or header("Location: index.php?warning=true");//die("Problemas a conectar al host");
 $bd = mysql_select_db("tecnotropolisla", $con) or die("Error al conectar a la BD");
 
 if(is_dir("Clases")){

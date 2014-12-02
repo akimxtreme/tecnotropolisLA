@@ -1,5 +1,5 @@
 ﻿<?php
-error_reporting (5); 
+//error_reporting (5); 
 ?>
 <!DOCTYPE html>
 <html lang="en">
