@@ -87,24 +87,20 @@ function allMovil($all){
     while ($f=  mysql_fetch_array($sql)){
         
         $sql2 = mysql_query("SELECT lng_idmodelo, str_modelo, str_friendly_url FROM tbl_modelos WHERE lng_idmarca=$f[0]");
-        while ($f2=  mysql_fetch_array($sql2)){
+        while ($f2=  mysql_fetch_array($sql2)){           
             
-            /*echo '<div class="col-lg-3">';
-            echo '<a href="movil.php?i='. $f2[2] .'"><img class="img-thumbnail" src="query/consultar.php?i='.$f2[0].'" title="'. $f2[1] .'"/></a>';
-            echo '</div>';*/
 
-            echo '<div class="col-xs-12 col-lg-3">';
-                echo '<div class="thumbnail">';
-                  echo '<a href="movil.php?i='. $f2[2] .'"><img src="query/consultar2.php?i='.$f2[0].'" title="'. $f2[1] .'"/></a>';
-                  echo '<div class="caption">';
-                    echo '<h5>'. $f2[1] .'</h5>';                    
-                    echo '<p><a href="#" class="btn btn-primary" role="button">Comparar</a> <a href="#" class="btn btn-success" role="button">Ver detalles</a></p>';
-                  echo '</div>';
-                echo '</div>';
+            echo '<div class="col-xs-12 col-md-4 col-lg-3">';               
+                echo '<div class="panel panel-default">';
+                    echo '<div class="panel-heading">';
+                        echo '<h5 class="panel-title" style="min-height:30px; margin-top: 4px; font-size:15px;">'. $f2[1] .'</h5>';
+                    echo '</div>';
+                    echo '<div class="panel-body">';
+                        echo '<a href="movil.php?i='. $f2[2] .'"><img src="query/consultar2.php?i='.$f2[0].'" title="'. $f2[1] .'"/></a>';
+                        echo '<p><a href="#" class="btn btn-primary" role="button">Comparar</a> <a href="#" class="btn btn-success" role="button">Ver detalles</a></p>';
+                    echo '</div>';
+                echo '</div>';        
             echo '</div>';
-
-            
-
         }
     }
 
